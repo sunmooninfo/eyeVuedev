@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同城约</title>
+</head>
+<style>
+body{
+    margin: 0;
+}
+.banner {
+    width: 100%;
+    height: 130px;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+.content {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: -40px;
+}
+.top_img {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    border-radius: 25px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.top_img img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+.mid_text {
+    text-align: center;
+}
+.name {
+    font-size: 1.2rem;
+}
+.versions {
+    font-size: 14px;
+    color: #999;
+}
+.downLoad {
+    text-align: center;
+    margin: 20px 0;
+}
+.downLoad button {
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #157df1;
+    border-radius: 22px;
+    border: none;
+    outline: none;
+}
+.downLoad p {
+    font-size: 14px;
+    color: #999;
+}
+.code {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.code img {
+    width: 146px;
+}
+#code_qrCode {
+    width: 146px;
+    margin: 0 auto;
+}
+.load_text {
+    font-size: 14px;
+    color: #999;
+}
+#notWx {
+    display: none;
+}
+
+#isWx {
+    display: none;
+}
+.cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;    
+    right: 0;
+    background: rgba(0,0,0,.5);
+}
+.top_cover {
+    text-align: right;
+    padding: 15px 15px 0 15px;
+}
+.top_cover img {
+    width: 50px;
+}
+.content_cover {
+    text-align: center;
+}
+.methods_one {
+    text-align: left;
+    padding: 0px 31px;
+    margin-top: -40px;
+    height: 40px;
+    line-height: 40px;
+}
+.content_cover .firP {
+    margin-top: 0;
+}
+.content_cover .firP img {
+    width: 30px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.content_cover .secP img {
+    width: 145px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.methods_two {
+    text-align: left;
+    padding: 0px 31px;
+    height: 40px;
+    line-height: 40px;
+}
+.copy_address {
+    width: 140px;
+    height: 40px;
+    line-height: 37px;
+    color: #fff;
+    background-color: #66ccff;
+    border-radius: 22px;
+    border: none;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+}
+</style>
+<body>
+    <div id="notWx">
+        <div class="banner">
+            <img src="https://imomocc.oss-cn-zhangjiakou.aliyuncs.com/banner.jpg" alt="">
+        </div>
+        <div class="content">
+            <div class="top_img">
+                <img src="https://imomocc.oss-cn-zhangjiakou.aliyuncs.com/logo.jpg" alt="">
+            </div>
+            <div class="mid_text">
+                <p class="name">同城约</p>
+                <p class="versions">
+                    <span>版本 1.0 （Build 1）</span>
+                    <span>大小 4.4M</span>
+                    <span style="display: block;margin: 5px 0;">更新时间 2020-11-23 18:00:00</span>
+                </p>
+            </div>
+            <div class="downLoad">
+                <button onclick="downLoad()">下载安装</button>
+                <p>适用于安卓手机</p>
+            </div>
+            <div class="code">
+                <img src="https://imomocc.oss-cn-zhangjiakou.aliyuncs.com/code.png" alt="">
+                <p class="load_text">扫描二维码下载</p>
+            </div>
+        </div>
+    </div>
+    <div id="isWx">
+        <div class="cover">
+            <div class="top_cover">
+                <img src="https://imomocc.oss-cn-zhangjiakou.aliyuncs.com/click_btn.png" alt="">
+            </div>
+            <div class="content_cover">
+                <div class="methods_one"> 方法一: </div>
+                <p class="firP">① 点击右上角
+                    <img src="https://imomocc.oss-cn-zhangjiakou.aliyuncs.com/menu.png" alt="">
+                    打开菜单
+                </p>
+                <p class="secP">
+                   ② 选择 <img src="https://imomocc.oss-cn-zhangjiakou.aliyuncs.com/android.png" alt="">
+                </p>
+
+                <div class="methods_two">
+                    方法二: 
+                </div>
+                <p style="line-height: 26px;">点击下方按钮复制网址 <br> 然后到手机浏览器打开所复制的下载链接</p>
+                <button onclick="copyText()" class="copy_address">复制网址</button>
+                <input readonly style="opacity: 0;" id="input" value="http://download.imomo.cc/"></input>
+                <!-- <p style="line-height: 24px;">
+                    ③ 或者点击“复制网址”,到
+                    <br>
+                    手机浏览器打开下载链接
+                </p> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            $('#isWx').show()
+            $('#notWx').hide()
+        }else{
+            $('#isWx').hide()
+            $('#notWx').show()
+        }
+    }
+    isWeiXin()
+    function downLoad() {
+        window.open("https://imomocc.oss-cn-zhangjiakou.aliyuncs.com/yue.apk")
+    }
+    function copyText() {
+      var input = document.getElementById("input");
+      input.select(); // 选中文本
+      document.execCommand("copy"); // 执行浏览器复制命令
+      alert("已复制，请打开浏览器粘贴并转到");
+    }
+</script>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符转换</title>
+</head>
+<style>
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 5%;
+    }
+    .sendIn {
+        font-size: 30px;
+        width: 90%;
+        max-width: 600px;
+        height: 100px;
+        border-color: #ccc;
+    }
+    .btnDiv {
+        margin-top: 50px;
+    }
+    .sendBtn {
+        width: 200px;
+        height: 100px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .sendOut {
+        border: 1px solid #ccc;
+        height: 200px;
+        /* line-height: 200px; */
+        text-align: center;
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 50px;
+
+    }
+    .sendOut span {
+        margin-top: 60px;
+        display: block;
+        font-size: 24px;
+    }
+</style>
+<body>
+    <div class="content">
+        <input type=""  onkeyup="this.value=this.value.replace(/\D/g,'')" class="sendIn" placeholder="请输入号码"  onkeydown="keyup(event);">  
+        <div class="btnDiv">
+            <button class="sendBtn">转换字符</button>
+        </div>
+
+        <!-- <input type="" class="sendOut"> -->
+        <div class="sendOut">
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./jquery.min.js"></script>
+<script>
+    var numOne = ['①','⒈','⑴','❶','Ⅰ','㈠','壹','ⅰ','一','１',
+                  '𝟙','𝟏','⓵','ߗ',]
+    var numTwo = ['②','⒉','⑵','❷','Ⅱ','㈡','贰','ⅱ','二','２',
+                  '𝟚','𝟐','⓶','ᘖ','౭','շ','߶','ᘖ','Ⲹ','ㄹ']
+    var numThree = ['③','⒊','⑶','❸','Ⅲ','㈢','叁','ⅲ','三','３', 'ᘊ',
+                    '𝟛','𝟑','⓷','ᴟ','ʒ','Յ','ʓ','Ӟ','૩','𐡎','ᶔ','ᴲ','Э','꒱']
+    var numFour = ['④','⒋','⑷','❹','Ⅳ','㈣','肆','ⅳ','四','４','丩',
+                   '𝟜','𝟒','⓸','Ҷ','౺','੫', 'Ҹ','Ӌ' ,'੫', '૫','Ⳡ']
+    var numFive = ['⑤','⒌','⑸','❺','Ⅴ','㈤','伍','ⅴ','五','５',
+                   '𝟝','𝟓','⓹','ҕ']
+    var numSix = ['⑥','⒍','⑹','❻','Ⅵ','㈥','陆','ⅵ','六','６',
+                  '𝟞','𝟔','⓺','Ⳓ','ꕃ','ნ','Ꮾ']
+    var numSeven = ['⑦','⒎','⑺','❼','Ⅶ','㈦','柒','ⅶ','七','７',
+                    '𝟟','𝟕','⓻','ꓶ','Ⴂ','ך',
+                    'ߣ',' ף','ך ' ]
+    var numEight = ['⑧','⒏','⑻','❽','Ⅷ','㈧','捌','ⅷ','八','８',
+                    '𝟠','𝟖','⓼','ȣ','〥','Ȣ'] 
+    var numNine = ['⑨','⒐','⑼','❾','Ⅸ','㈨','玖','ⅸ','九','９',
+                    '𝟡','𝟗','⓽','୨','၄','੧','ߟ','৭','Ꮽ']
+    var numZero = ['⓪', 'ⓞ','⓿','零','O','０','𝟘','𝟎','Ό' ]
+    $('.sendBtn').click(function() {
+        changeNum()
+    })
+ 
+    function changeNum() {
+        let result = ''
+        let input = $('.sendIn').val()
+        let spInput = input.split('')
+        console.log(Math.floor((Math.random()*4)))
+        for (var key in spInput) {
+         console.log(spInput[key])
+            if (spInput[key] == 0) {
+                result = result + numZero[Math.floor((Math.random()*(numZero.length)))]
+            } else if (spInput[key] == 1) {
+                result = result + numOne[Math.floor((Math.random()*(numOne.length)))]
+            } else if (spInput[key] == 2) {
+                result = result + numTwo[Math.floor((Math.random()*(numTwo.length)))]
+            } else if (spInput[key] == 3) {
+                result = result + numThree[Math.floor((Math.random()*(numThree.length)))]
+            } else if (spInput[key] == 4) {
+                result = result + numFour[Math.floor((Math.random()*(numFour.length)))]
+            } else if (spInput[key] == 5) {
+                result = result + numFive[Math.floor((Math.random()*(numFive.length)))]
+            } else if (spInput[key] == 6) {
+                result = result + numSix[Math.floor((Math.random()*(numSix.length)))]
+            } else if (spInput[key] == 7) {
+                result = result + numSeven[Math.floor((Math.random()*(numSeven.length)))]
+            } else if (spInput[key] == 8) {
+                result = result + numEight[Math.floor((Math.random()*(numEight.length)))]
+            } else if (spInput[key] == 9) {
+                result = result + numNine[Math.floor((Math.random()*(numNine.length)))]
+            }
+        }
+        console.log(result)
+        $('.sendOut span').text(result)
+    }
+    function keyup(params) {
+        var evt = window.event || e
+        if (evt.keyCode == 13){
+            changeNum()
+        }
+    }
+    
+   
+</script>

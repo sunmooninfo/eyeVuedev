@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/x-icon href=""><title>首页</title><link href=./static/css/app.581ba9a413b12feed011fffee3cfeb31.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.70ce5cc9c4906cbb51c5.js></script><script type=text/javascript src=./static/js/vendor.382f6871c59e850508f3.js></script><script type=text/javascript src=./static/js/app.fbfcd5e310df7372255c.js></script></body></html><script src=./static/jquery.min.js></script><script>window.onload = function () {
+        getAjax()
+    }
+
+  function getAjax() {
+            var ajaxObj = new XMLHttpRequest();
+
+            ajaxObj.open('get', 'https://wwwapidev.6eye9.com/cms/home/about',true);
+            ajaxObj.setRequestHeader("Accept","application/json, text/plain, */*");
+            ajaxObj.send();
+
+            ajaxObj.onreadystatechange = function () {
+                if (ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+                    console.log('数据返回成功');
+                    let data = JSON.parse(ajaxObj.response)
+                    console.log( JSON.parse(ajaxObj.response));
+                    document.title = data.data.name
+                    $('[rel="shortcut icon"]').attr("href", data.data.smallLogo);
+                }
+            }
+  }</script>

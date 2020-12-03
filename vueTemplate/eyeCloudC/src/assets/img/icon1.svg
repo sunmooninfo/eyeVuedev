@@ -1,0 +1,18 @@
+<svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00a4ff;
+      }
+    </style>
+  </defs>
+  <title>Product Icons【32】</title>
+  <g>
+    <polygon class="cls-1" points="21 15.84 16 18.7 11 15.84 11 15.83 9 14.69 9 17 16 21 23 17 23 14.69 21 15.83 21 15.84"/>
+    <path class="cls-1" d="M16,7,9,11v2l2,1.14L16,17l5-2.86L23,13V11Zm0,7.7L11.28,12,16,9.3,20.72,12Z"/>
+    <g id="_编组_" data-name="&lt;编组&gt;">
+      <polygon class="cls-1" points="28 22.84 16 29.7 4 22.84 4 9.16 16 2.3 28 9.16 28 9.14 30 8 16 0 2 8 2 24 16 32 30 24 30 12 28 13.14 28 22.84"/>
+    </g>
+    <polygon class="cls-1" points="21 19.84 16 22.7 11 19.84 11 19.83 9 18.69 9 21 16 25 23 21 23 18.69 21 19.83 21 19.84"/>
+  </g>
+</svg>
