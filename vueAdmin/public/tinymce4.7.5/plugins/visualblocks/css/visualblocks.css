@@ -92,7 +92,7 @@
   background-image: url(data:image/gif;base64,R0lGODlhLQAKAIABALu7u////yH5BAEAAAEALAAAAAAtAAoAAAI/jI+pywwNozSP1gDyyZcjb3UaRpXkWaXmZW4OqKLhBmLs+K263DkJK7OJeifh7FicKD9A1/IpGdKkyFpNmCkAADs=);
   background-repeat: no-repeat;
 }
-
+ 
 .mce-visualblocks pre {
   padding-top: 10px;
   border: 1px dashed #BBB;
@@ -102,7 +102,7 @@
 }
 
 .mce-visualblocks figure {
-  padding-top: 10px;
+  padding-top: 10px;  
   border: 1px dashed #BBB;
   margin: 0 0 1em 3px;
   background-image: url(data:image/gif;base64,R0lGODlhJAAKAIAAALu7u////yH5BAEAAAEALAAAAAAkAAoAAAI0jI+py+2fwAHUSFvD3RlvG4HIp4nX5JFSpnZUJ6LlrM52OE7uSWosBHScgkSZj7dDKnWAAgA7);
