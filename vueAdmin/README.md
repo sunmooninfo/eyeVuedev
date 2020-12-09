@@ -1,5 +1,24 @@
+### 管理后台实例
+
+![](./src/assets/admin-dashboard.png)
+
+1. 浏览器打开，输入以下网址: [https://wwwadmindev.6eye9.com/](https://wwwadmindev.6eye9.com/)
+2. 用户访问用户名`guest`，管理员密码`Guest123`
+> 注意：此实例是付费知识平台的管理后台，请勿删除和更改数据。
+
+### 管理平台功能
+
+* 系统管理
+* 文章管理
+* 用户管理
+* 商城管理
+* 商品管理
+* 统计报表
+* 附带工具
+* 外链
+
 # vue-element-admin框架项目简介 
-**一、uni-app是什么**  
+**一、vue-element-admin是什么**  
 vue-element-admin 是一个后台前端解决方案，它基于 vue 和 element-ui实现。它使用了最新的前端技术栈，内置了 i18 国际化解决方案，动态路由，权限验证，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。
 
 **二、开发工具**  
