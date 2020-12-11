@@ -68,6 +68,12 @@
             <el-option v-for="item in catL1" :key="item.value" :label="item.label" :value="item.value" />
           </el-select>
         </el-form-item>
+        <el-form-item v-if="dataForm.level === 'L2'" label="上线小程序" prop="isShown">
+          <el-radio-group v-model="dataForm.isShown">
+            <el-radio :label="true">是</el-radio>
+            <el-radio :label="false">否</el-radio>
+          </el-radio-group>
+        </el-form-item>
         <el-form-item label="类目图标" prop="iconUrl">
           <el-upload
             :headers="headers"
@@ -163,11 +169,12 @@ export default {
         id: undefined,
         name: '',
         keywords: '',
-        level: 'L2',
+        level: 'L1',
         pid: 0,
         desc: '',
         iconUrl: '',
-        picUrl: ''
+        picUrl: '',
+        isShown: true
       },
       dialogFormVisible: false,
       dialogStatus: '',
@@ -216,16 +223,19 @@ export default {
         id: undefined,
         name: '',
         keywords: '',
-        level: 'L2',
+        level: 'L1',
         pid: 0,
         desc: '',
         iconUrl: '',
-        picUrl: ''
+        picUrl: '',
+        isShown: true
       }
     },
     onLevelChange: function(value) {
       if (value === 'L1') {
         this.dataForm.pid = 0
+      } else if (value === 'L2') {
+        this.dataForm.pid = this.catL1[0].value
       }
     },
     handleCreate() {
@@ -235,6 +245,7 @@ export default {
       this.$nextTick(() => {
         this.$refs['dataForm'].clearValidate()
       })
+      console.log(this.dataForm)
     },
     uploadIconUrl: function(response) {
       this.dataForm.iconUrl = response.data.url

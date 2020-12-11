@@ -25,7 +25,7 @@
             <template slot="append">元</template>
           </el-input>
         </el-form-item>
-        <el-form-item label="是在小程序上线" prop="isShown">
+        <el-form-item label="上线小程序" prop="isShown">
           <el-radio-group v-model="goods.isShown">
             <el-radio :label="true">是</el-radio>
             <el-radio :label="false">否</el-radio>
